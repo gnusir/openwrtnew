@@ -9,6 +9,12 @@
 # File name: diy-part2.sh
 # Description: OpenWrt DIY script part 2 (After Update feeds)
 #
-
+cd openwrt
+rm -rf feeds/packages/net/mosdns && rm -rf feeds/luci/applications/luci-app-mosdns
+# rm -rf feeds/kenzo/luci-app-passwall
+# ./scripts/feeds clean
+# git pull
+./scripts/feeds update -a
+./scripts/feeds install -a
 # Modify default IP
 #sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
